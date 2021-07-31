@@ -14,7 +14,7 @@ export default function Header() {
     <Popover as="header" className="relative">
       {({ open }) => (
         <>
-          <div className="bg-gray-900 pt-6">
+          <div className="bg-gray-900 pt-6 pb-6">
             <nav
               className="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6"
               aria-label="Global"
