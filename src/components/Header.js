@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "Lost My Pet", href: "/lost-my-pet" },
-  { name: "Found a Pet", href: "/found-a-pet" },
+  { name: "Lost My Pet", href: "/lost-pet" },
+  { name: "Found a Pet", href: "/found-pet" },
 ];
 
 export default function Header() {

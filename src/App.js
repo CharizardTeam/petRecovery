@@ -12,8 +12,8 @@ export default function App() {
     <div>
       <Header />
       <Switch>
-        <Route path="/lost-my-pet" component={LostPet}></Route>
-        <Route path="/found-a-pet" component={FoundPet}></Route>
+        <Route path="/lost-pet" component={LostPet}></Route>
+        <Route path="/found-pet" component={FoundPet}></Route>
         <Route exact path="/" component={LandingPage}></Route>
       </Switch>
       <Footer />
