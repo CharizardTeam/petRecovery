@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+// import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Popover, Transition } from "@headlessui/react";
 import {
   CloudUploadIcon,
@@ -16,7 +16,7 @@ import { ChevronRightIcon, ExternalLinkIcon } from "@heroicons/react/solid";
 const navigation = [
   { name: "Product", href: "#" },
   { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
+  { name: "Marketplace", href: "#"},
   { name: "Company", href: "#" },
 ];
 const features = [
