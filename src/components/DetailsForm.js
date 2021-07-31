@@ -20,84 +20,61 @@ export default function DetailsForm() {
       <div className="space-y-8 divide-y divide-gray-200">
         <div>
           <div>
-            <h3 className="text-lg leading-6 font-medium text-gray-900">
+            {/* <h3 className="text-lg leading-6 font-medium text-gray-900">
               Profile
+            </h3> */}
+            <p className="mt-1 text-sm text-gray-500 text-center">
+              Some tagline.
+            </p>
+          </div>
+        </div>
+
+        {/* Pet Info Section */}
+        <div className="pt-8">
+          <div>
+            <h3 className="text-lg leading-6 font-medium text-gray-900">
+              Pet Information
             </h3>
             <p className="mt-1 text-sm text-gray-500">
-              This information will be displayed publicly so be careful what you
-              share.
+              Use a permanent address where you can receive mail.
             </p>
           </div>
 
           <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
-            <div className="sm:col-span-4">
-              <label
-                htmlFor="username"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Username
-              </label>
-              <div className="mt-1 flex rounded-md shadow-sm">
-                <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
-                  workcation.com/
-                </span>
-                <input
-                  type="text"
-                  name="username"
-                  id="username"
-                  autoComplete="username"
-                  className="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-none rounded-r-md sm:text-sm border-gray-300"
-                />
-              </div>
-            </div>
-
             <div className="sm:col-span-6">
               <label
-                htmlFor="about"
+                htmlFor="animal-type"
                 className="block text-sm font-medium text-gray-700"
               >
-                About
+                Animal Type
               </label>
               <div className="mt-1">
-                <textarea
-                  id="about"
-                  name="about"
-                  rows={3}
-                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md"
-                  defaultValue={""}
+                <input
+                  type="text"
+                  name="animal-type"
+                  id="animal-type"
+                  autoComplete="animal-type"
+                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                 />
               </div>
-              <p className="mt-2 text-sm text-gray-500">
-                Write a few sentences about yourself.
-              </p>
             </div>
-
             <div className="sm:col-span-6">
               <label
-                htmlFor="photo"
+                htmlFor="pet-name"
                 className="block text-sm font-medium text-gray-700"
               >
-                Photo
+                Pet's Name
               </label>
-              <div className="mt-1 flex items-center">
-                <span className="h-12 w-12 rounded-full overflow-hidden bg-gray-100">
-                  <svg
-                    className="h-full w-full text-gray-300"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
-                </span>
-                <button
-                  type="button"
-                  className="ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                  Change
-                </button>
+              <div className="mt-1">
+                <input
+                  type="text"
+                  name="pet-name"
+                  id="pet-name"
+                  autoComplete="pet-name"
+                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                />
               </div>
             </div>
-
             <div className="sm:col-span-6">
               <label
                 htmlFor="cover-photo"
@@ -142,9 +119,31 @@ export default function DetailsForm() {
                 </div>
               </div>
             </div>
+
+            <div className="sm:col-span-6">
+              <label
+                htmlFor="about"
+                className="block text-sm font-medium text-gray-700"
+              >
+                About
+              </label>
+              <div className="mt-1">
+                <textarea
+                  id="about"
+                  name="about"
+                  rows={3}
+                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md"
+                  defaultValue={""}
+                />
+              </div>
+              <p className="mt-2 text-sm text-gray-500">
+                Write a few sentences about yourself.
+              </p>
+            </div>
           </div>
         </div>
 
+        {/* Owner Info Section */}
         <div className="pt-8">
           <div>
             <h3 className="text-lg leading-6 font-medium text-gray-900">
@@ -154,6 +153,7 @@ export default function DetailsForm() {
               Use a permanent address where you can receive mail.
             </p>
           </div>
+
           <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
             <div className="sm:col-span-3">
               <label
@@ -302,6 +302,7 @@ export default function DetailsForm() {
           </div>
         </div>
 
+        {/* Notifications Section */}
         <div className="pt-8">
           <div>
             <h3 className="text-lg leading-6 font-medium text-gray-900">
