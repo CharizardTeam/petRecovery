@@ -36,28 +36,11 @@ export default function DetailsForm() {
               Pet Information
             </h3>
             <p className="mt-1 text-sm text-gray-500">
-              Use a permanent address where you can receive mail.
+              Please describe your pet in detail.
             </p>
           </div>
 
           <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
-            <div className="sm:col-span-6">
-              <label
-                htmlFor="animal-type"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Animal Type
-              </label>
-              <div className="mt-1">
-                <input
-                  type="text"
-                  name="animal-type"
-                  id="animal-type"
-                  autoComplete="animal-type"
-                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                />
-              </div>
-            </div>
             <div className="sm:col-span-6">
               <label
                 htmlFor="pet-name"
@@ -77,10 +60,45 @@ export default function DetailsForm() {
             </div>
             <div className="sm:col-span-6">
               <label
+                htmlFor="animal-type"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Animal Type
+              </label>
+              <div className="mt-1">
+                <input
+                  type="text"
+                  name="animal-type"
+                  id="animal-type"
+                  autoComplete="animal-type"
+                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                />
+              </div>
+            </div>
+            <div className="sm:col-span-6">
+              <label
+                htmlFor="animal-color"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Animal Color(s)
+              </label>
+              <div className="mt-1">
+                <input
+                  type="text"
+                  name="animal-color"
+                  id="animal-color"
+                  autoComplete="animal-color"
+                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                />
+              </div>
+            </div>
+
+            <div className="sm:col-span-6">
+              <label
                 htmlFor="cover-photo"
                 className="block text-sm font-medium text-gray-700"
               >
-                Cover photo
+                Photo
               </label>
               <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                 <div className="space-y-1 text-center">
@@ -125,7 +143,7 @@ export default function DetailsForm() {
                 htmlFor="about"
                 className="block text-sm font-medium text-gray-700"
               >
-                About
+                Additional Details
               </label>
               <div className="mt-1">
                 <textarea
@@ -137,8 +155,26 @@ export default function DetailsForm() {
                 />
               </div>
               <p className="mt-2 text-sm text-gray-500">
-                Write a few sentences about yourself.
+                Please list any additional characteristics.
               </p>
+            </div>
+
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="lost-zipcode"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Last Seen In (Zip Code / Postal)
+              </label>
+              <div className="mt-1">
+                <input
+                  type="text"
+                  name="lost-zipcode"
+                  id="lost-zipcode"
+                  autoComplete="animal-color"
+                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -147,10 +183,10 @@ export default function DetailsForm() {
         <div className="pt-8">
           <div>
             <h3 className="text-lg leading-6 font-medium text-gray-900">
-              Personal Information
+              Your Contact Information
             </h3>
             <p className="mt-1 text-sm text-gray-500">
-              Use a permanent address where you can receive mail.
+              How can you be reached if your pet is found?
             </p>
           </div>
 
@@ -191,7 +227,7 @@ export default function DetailsForm() {
               </div>
             </div>
 
-            <div className="sm:col-span-4">
+            <div className="sm:col-span-3">
               <label
                 htmlFor="email"
                 className="block text-sm font-medium text-gray-700"
@@ -211,90 +247,17 @@ export default function DetailsForm() {
 
             <div className="sm:col-span-3">
               <label
-                htmlFor="country"
+                htmlFor="phone"
                 className="block text-sm font-medium text-gray-700"
               >
-                Country / Region
-              </label>
-              <div className="mt-1">
-                <select
-                  id="country"
-                  name="country"
-                  autoComplete="country"
-                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                >
-                  <option>United States</option>
-                  <option>Canada</option>
-                  <option>Mexico</option>
-                </select>
-              </div>
-            </div>
-
-            <div className="sm:col-span-6">
-              <label
-                htmlFor="street-address"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Street address
+                Phone Number
               </label>
               <div className="mt-1">
                 <input
-                  type="text"
-                  name="street-address"
-                  id="street-address"
-                  autoComplete="street-address"
-                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                />
-              </div>
-            </div>
-
-            <div className="sm:col-span-2">
-              <label
-                htmlFor="city"
-                className="block text-sm font-medium text-gray-700"
-              >
-                City
-              </label>
-              <div className="mt-1">
-                <input
-                  type="text"
-                  name="city"
-                  id="city"
-                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                />
-              </div>
-            </div>
-
-            <div className="sm:col-span-2">
-              <label
-                htmlFor="state"
-                className="block text-sm font-medium text-gray-700"
-              >
-                State / Province
-              </label>
-              <div className="mt-1">
-                <input
-                  type="text"
-                  name="state"
-                  id="state"
-                  className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                />
-              </div>
-            </div>
-
-            <div className="sm:col-span-2">
-              <label
-                htmlFor="zip"
-                className="block text-sm font-medium text-gray-700"
-              >
-                ZIP / Postal
-              </label>
-              <div className="mt-1">
-                <input
-                  type="text"
-                  name="zip"
-                  id="zip"
-                  autoComplete="postal-code"
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  autoComplete="phone"
                   className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                 />
               </div>
@@ -454,7 +417,7 @@ export default function DetailsForm() {
             type="submit"
             className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           >
-            Save
+            Submit
           </button>
         </div>
       </div>
