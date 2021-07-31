@@ -1,5 +1,6 @@
-import { Fragment } from 'react'
-import { Popover, Transition } from '@headlessui/react'
+import { Fragment } from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Popover, Transition } from "@headlessui/react";
 import {
   CloudUploadIcon,
   CogIcon,
@@ -9,136 +10,141 @@ import {
   ServerIcon,
   ShieldCheckIcon,
   XIcon,
-} from '@heroicons/react/outline'
-import { ChevronRightIcon, ExternalLinkIcon } from '@heroicons/react/solid'
+} from "@heroicons/react/outline";
+import { ChevronRightIcon, ExternalLinkIcon } from "@heroicons/react/solid";
 
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
-]
+  { name: "Product", href: "#" },
+  { name: "Features", href: "#" },
+  { name: "Marketplace", href: "#" },
+  { name: "Company", href: "#" },
+];
 const features = [
   {
-    name: 'Push to Deploy',
-    description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi vitae lobortis.',
+    name: "Push to Deploy",
+    description:
+      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi vitae lobortis.",
     icon: CloudUploadIcon,
   },
   {
-    name: 'SSL Certificates',
-    description: 'Qui aut temporibus nesciunt vitae dicta repellat sit dolores pariatur. Temporibus qui illum aut.',
+    name: "SSL Certificates",
+    description:
+      "Qui aut temporibus nesciunt vitae dicta repellat sit dolores pariatur. Temporibus qui illum aut.",
     icon: LockClosedIcon,
   },
   {
-    name: 'Simple Queues',
-    description: 'Rerum quas incidunt deleniti quaerat suscipit mollitia. Amet repellendus ut odit dolores qui.',
+    name: "Simple Queues",
+    description:
+      "Rerum quas incidunt deleniti quaerat suscipit mollitia. Amet repellendus ut odit dolores qui.",
     icon: RefreshIcon,
   },
   {
-    name: 'Advanced Security',
-    description: 'Ullam laboriosam est voluptatem maxime ut mollitia commodi. Et dignissimos suscipit perspiciatis.',
+    name: "Advanced Security",
+    description:
+      "Ullam laboriosam est voluptatem maxime ut mollitia commodi. Et dignissimos suscipit perspiciatis.",
     icon: ShieldCheckIcon,
   },
   {
-    name: 'Powerful API',
+    name: "Powerful API",
     description:
-      'Ab a facere voluptatem in quia corrupti veritatis aliquam. Veritatis labore quaerat ipsum quaerat id.',
+      "Ab a facere voluptatem in quia corrupti veritatis aliquam. Veritatis labore quaerat ipsum quaerat id.",
     icon: CogIcon,
   },
   {
-    name: 'Database Backups',
-    description: 'Quia qui et est officia cupiditate qui consectetur. Ratione similique et impedit ea ipsum et.',
+    name: "Database Backups",
+    description:
+      "Quia qui et est officia cupiditate qui consectetur. Ratione similique et impedit ea ipsum et.",
     icon: ServerIcon,
   },
-]
+];
 const blogPosts = [
   {
     id: 1,
-    title: 'Boost your conversion rate',
-    href: '#',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-    category: { name: 'Article', href: '#' },
+    title: "Boost your conversion rate",
+    href: "#",
+    date: "Mar 16, 2020",
+    datetime: "2020-03-16",
+    category: { name: "Article", href: "#" },
     imageUrl:
-      'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80",
     preview:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.",
     author: {
-      name: 'Roel Aufderehar',
+      name: "Roel Aufderehar",
       imageUrl:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      href: '#',
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      href: "#",
     },
-    readingLength: '6 min',
+    readingLength: "6 min",
   },
   {
     id: 2,
-    title: 'How to use search engine optimization to drive sales',
-    href: '#',
-    date: 'Mar 10, 2020',
-    datetime: '2020-03-10',
-    category: { name: 'Video', href: '#' },
+    title: "How to use search engine optimization to drive sales",
+    href: "#",
+    date: "Mar 10, 2020",
+    datetime: "2020-03-10",
+    category: { name: "Video", href: "#" },
     imageUrl:
-      'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+      "https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80",
     preview:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.",
     author: {
-      name: 'Brenna Goyette',
+      name: "Brenna Goyette",
       imageUrl:
-        'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      href: '#',
+        "https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      href: "#",
     },
-    readingLength: '4 min',
+    readingLength: "4 min",
   },
   {
     id: 3,
-    title: 'Improve your customer experience',
-    href: '#',
-    date: 'Feb 12, 2020',
-    datetime: '2020-02-12',
-    category: { name: 'Case Study', href: '#' },
+    title: "Improve your customer experience",
+    href: "#",
+    date: "Feb 12, 2020",
+    datetime: "2020-02-12",
+    category: { name: "Case Study", href: "#" },
     imageUrl:
-      'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+      "https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80",
     preview:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
     author: {
-      name: 'Daniela Metz',
+      name: "Daniela Metz",
       imageUrl:
-        'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      href: '#',
+        "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      href: "#",
     },
-    readingLength: '11 min',
+    readingLength: "11 min",
   },
-]
+];
 const footerNavigation = {
   solutions: [
-    { name: 'Marketing', href: '#' },
-    { name: 'Analytics', href: '#' },
-    { name: 'Commerce', href: '#' },
-    { name: 'Insights', href: '#' },
+    { name: "Marketing", href: "#" },
+    { name: "Analytics", href: "#" },
+    { name: "Commerce", href: "#" },
+    { name: "Insights", href: "#" },
   ],
   support: [
-    { name: 'Pricing', href: '#' },
-    { name: 'Documentation', href: '#' },
-    { name: 'Guides', href: '#' },
-    { name: 'API Status', href: '#' },
+    { name: "Pricing", href: "#" },
+    { name: "Documentation", href: "#" },
+    { name: "Guides", href: "#" },
+    { name: "API Status", href: "#" },
   ],
   company: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Partners', href: '#' },
+    { name: "About", href: "#" },
+    { name: "Blog", href: "#" },
+    { name: "Jobs", href: "#" },
+    { name: "Press", href: "#" },
+    { name: "Partners", href: "#" },
   ],
   legal: [
-    { name: 'Claim', href: '#' },
-    { name: 'Privacy', href: '#' },
-    { name: 'Terms', href: '#' },
+    { name: "Claim", href: "#" },
+    { name: "Privacy", href: "#" },
+    { name: "Terms", href: "#" },
   ],
   social: [
     {
-      name: 'Facebook',
-      href: '#',
+      name: "Facebook",
+      href: "#",
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -150,8 +156,8 @@ const footerNavigation = {
       ),
     },
     {
-      name: 'Instagram',
-      href: '#',
+      name: "Instagram",
+      href: "#",
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -163,8 +169,8 @@ const footerNavigation = {
       ),
     },
     {
-      name: 'Twitter',
-      href: '#',
+      name: "Twitter",
+      href: "#",
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
@@ -172,8 +178,8 @@ const footerNavigation = {
       ),
     },
     {
-      name: 'GitHub',
-      href: '#',
+      name: "GitHub",
+      href: "#",
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -185,8 +191,8 @@ const footerNavigation = {
       ),
     },
     {
-      name: 'Dribbble',
-      href: '#',
+      name: "Dribbble",
+      href: "#",
       icon: (props) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -198,228 +204,336 @@ const footerNavigation = {
       ),
     },
   ],
-}
+};
 
 export default function App() {
   return (
-    <div className="bg-white">
-      <div className="relative overflow-hidden">
-        <Popover as="header" className="relative">
-          {({ open }) => (
-            <>
-              <div className="bg-gray-900 pt-6">
-                <nav
-                  className="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6"
-                  aria-label="Global"
-                >
-                  <div className="flex items-center flex-1">
-                    <div className="flex items-center justify-between w-full md:w-auto">
-                      <a href="#">
-                        <span className="sr-only">Workflow</span>
-                        <img
-                          className="h-8 w-auto sm:h-10"
-                          src="https://tailwindui.com/img/logos/workflow-mark-teal-200-cyan-400.svg"
-                          alt=""
-                        />
-                      </a>
-                      <div className="-mr-2 flex items-center md:hidden">
-                        <Popover.Button className="bg-gray-900 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white">
-                          <span className="sr-only">Open main menu</span>
-                          <MenuIcon className="h-6 w-6" aria-hidden="true" />
-                        </Popover.Button>
-                      </div>
-                    </div>
-                    <div className="hidden space-x-8 md:flex md:ml-10">
-                      {navigation.map((item) => (
-                        <a
-                          key={item.name}
-                          href={item.href}
-                          className="text-base font-medium text-white hover:text-gray-300"
-                        >
-                          {item.name}
+    <BrowserRouter>
+      <div className="bg-white">
+        <div className="relative overflow-hidden">
+          <Popover as="header" className="relative">
+            {({ open }) => (
+              <>
+                <div className="bg-gray-900 pt-6">
+                  <nav
+                    className="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6"
+                    aria-label="Global"
+                  >
+                    <div className="flex items-center flex-1">
+                      <div className="flex items-center justify-between w-full md:w-auto">
+                        <a href="#">
+                          <span className="sr-only">Workflow</span>
+                          <img
+                            className="h-8 w-auto sm:h-10"
+                            src="https://tailwindui.com/img/logos/workflow-mark-teal-200-cyan-400.svg"
+                            alt=""
+                          />
                         </a>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="hidden md:flex md:items-center md:space-x-6">
-                    <a href="#" className="text-base font-medium text-white hover:text-gray-300">
-                      Log in
-                    </a>
-                    <a
-                      href="#"
-                      className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700"
-                    >
-                      Start free trial
-                    </a>
-                  </div>
-                </nav>
-              </div>
-
-              <Transition
-                show={open}
-                as={Fragment}
-                enter="duration-150 ease-out"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="duration-100 ease-in"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              >
-                <Popover.Panel
-                  focus
-                  static
-                  className="absolute top-0 inset-x-0 p-2 transition transform origin-top md:hidden"
-                >
-                  <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
-                    <div className="px-5 pt-4 flex items-center justify-between">
-                      <div>
-                        <img
-                          className="h-8 w-auto"
-                          src="https://tailwindui.com/img/logos/workflow-mark-teal-500-cyan-600.svg"
-                          alt=""
-                        />
+                        <div className="-mr-2 flex items-center md:hidden">
+                          <Popover.Button className="bg-gray-900 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white">
+                            <span className="sr-only">Open main menu</span>
+                            <MenuIcon className="h-6 w-6" aria-hidden="true" />
+                          </Popover.Button>
+                        </div>
                       </div>
-                      <div className="-mr-2">
-                        <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-600">
-                          <span className="sr-only">Close menu</span>
-                          <XIcon className="h-6 w-6" aria-hidden="true" />
-                        </Popover.Button>
-                      </div>
-                    </div>
-                    <div className="pt-5 pb-6">
-                      <div className="px-2 space-y-1">
+                      <div className="hidden space-x-8 md:flex md:ml-10">
                         {navigation.map((item) => (
                           <a
                             key={item.name}
                             href={item.href}
-                            className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50"
+                            className="text-base font-medium text-white hover:text-gray-300"
                           >
                             {item.name}
                           </a>
                         ))}
                       </div>
-                      <div className="mt-6 px-5">
-                        <a
-                          href="#"
-                          className="block text-center w-full py-3 px-4 rounded-md shadow bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-medium hover:from-teal-600 hover:to-cyan-700"
-                        >
-                          Start free trial
-                        </a>
-                      </div>
-                      <div className="mt-6 px-5">
-                        <p className="text-center text-base font-medium text-gray-500">
-                          Existing customer?{' '}
-                          <a href="#" className="text-gray-900 hover:underline">
-                            Login
-                          </a>
-                        </p>
-                      </div>
                     </div>
-                  </div>
-                </Popover.Panel>
-              </Transition>
-            </>
-          )}
-        </Popover>
-        <main>
-          <div className="pt-10 bg-gray-900 sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
-            <div className="mx-auto max-w-7xl lg:px-8">
-              <div className="lg:grid lg:grid-cols-2 lg:gap-8">
-                <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
-                  <div className="lg:py-24">
-                    <a
-                      href="#"
-                      className="inline-flex items-center text-white bg-black rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200"
-                    >
-                      <span className="px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full">
-                        We're hiring
-                      </span>
-                      <span className="ml-4 text-sm">Visit our careers page</span>
-                      <ChevronRightIcon className="ml-2 w-5 h-5 text-gray-500" aria-hidden="true" />
-                    </a>
-                    <h1 className="mt-4 text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
-                      <span className="block">A better way to</span>
-                      <span className="pb-3 block bg-clip-text text-transparent bg-gradient-to-r from-teal-200 to-cyan-400 sm:pb-5">
-                        ship web apps
-                      </span>
-                    </h1>
-                    <p className="text-base text-gray-300 sm:text-xl lg:text-lg xl:text-xl">
-                      Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui Lorem cupidatat commodo. Elit
-                      sunt amet fugiat veniam occaecat fugiat.
-                    </p>
-                    <div className="mt-10 sm:mt-12">
-                      <form action="#" className="sm:max-w-xl sm:mx-auto lg:mx-0">
-                        <div className="sm:flex">
-                          <div className="min-w-0 flex-1">
-                            <label htmlFor="email" className="sr-only">
-                              Email address
-                            </label>
-                            <input
-                              id="email"
-                              type="email"
-                              placeholder="Enter your email"
-                              className="block w-full px-4 py-3 rounded-md border-0 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900"
-                            />
-                          </div>
-                          <div className="mt-3 sm:mt-0 sm:ml-3">
-                            <button
-                              type="submit"
-                              className="block w-full py-3 px-4 rounded-md shadow bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-medium hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900"
-                            >
-                              Start free trial
-                            </button>
-                          </div>
-                        </div>
-                        <p className="mt-3 text-sm text-gray-300 sm:mt-4">
-                          Start your free 14-day trial, no credit card necessary. By providing your email, you agree to
-                          our{' '}
-                          <a href="#" className="font-medium text-white">
-                            terms or service
-                          </a>
-                          .
-                        </p>
-                      </form>
+                    <div className="hidden md:flex md:items-center md:space-x-6">
+                      <a
+                        href="#"
+                        className="text-base font-medium text-white hover:text-gray-300"
+                      >
+                        Log in
+                      </a>
+                      <a
+                        href="#"
+                        className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700"
+                      >
+                        Start free trial
+                      </a>
                     </div>
-                  </div>
+                  </nav>
                 </div>
-                <div className="mt-12 -mb-16 sm:-mb-48 lg:m-0 lg:relative">
-                  <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
-                    {/* Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ */}
-                    <img
-                      className="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                      src="https://tailwindui.com/img/component-images/cloud-illustration-teal-cyan.svg"
-                      alt=""
-                    />
+
+                <Transition
+                  show={open}
+                  as={Fragment}
+                  enter="duration-150 ease-out"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="duration-100 ease-in"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <Popover.Panel
+                    focus
+                    static
+                    className="absolute top-0 inset-x-0 p-2 transition transform origin-top md:hidden"
+                  >
+                    <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+                      <div className="px-5 pt-4 flex items-center justify-between">
+                        <div>
+                          <img
+                            className="h-8 w-auto"
+                            src="https://tailwindui.com/img/logos/workflow-mark-teal-500-cyan-600.svg"
+                            alt=""
+                          />
+                        </div>
+                        <div className="-mr-2">
+                          <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-600">
+                            <span className="sr-only">Close menu</span>
+                            <XIcon className="h-6 w-6" aria-hidden="true" />
+                          </Popover.Button>
+                        </div>
+                      </div>
+                      <div className="pt-5 pb-6">
+                        <div className="px-2 space-y-1">
+                          {navigation.map((item) => (
+                            <a
+                              key={item.name}
+                              href={item.href}
+                              className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50"
+                            >
+                              {item.name}
+                            </a>
+                          ))}
+                        </div>
+                        <div className="mt-6 px-5">
+                          <a
+                            href="#"
+                            className="block text-center w-full py-3 px-4 rounded-md shadow bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-medium hover:from-teal-600 hover:to-cyan-700"
+                          >
+                            Start free trial
+                          </a>
+                        </div>
+                        <div className="mt-6 px-5">
+                          <p className="text-center text-base font-medium text-gray-500">
+                            Existing customer?{" "}
+                            <a
+                              href="#"
+                              className="text-gray-900 hover:underline"
+                            >
+                              Login
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Popover.Panel>
+                </Transition>
+              </>
+            )}
+          </Popover>
+          <main>
+            <div className="pt-10 bg-gray-900 sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
+              <div className="mx-auto max-w-7xl lg:px-8">
+                <div className="lg:grid lg:grid-cols-2 lg:gap-8">
+                  <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
+                    <div className="lg:py-24">
+                      <a
+                        href="#"
+                        className="inline-flex items-center text-white bg-black rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200"
+                      >
+                        <span className="px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full">
+                          We're hiring
+                        </span>
+                        <span className="ml-4 text-sm">
+                          Visit our careers page
+                        </span>
+                        <ChevronRightIcon
+                          className="ml-2 w-5 h-5 text-gray-500"
+                          aria-hidden="true"
+                        />
+                      </a>
+                      <h1 className="mt-4 text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
+                        <span className="block">A better way to</span>
+                        <span className="pb-3 block bg-clip-text text-transparent bg-gradient-to-r from-teal-200 to-cyan-400 sm:pb-5">
+                          ship web apps
+                        </span>
+                      </h1>
+                      <p className="text-base text-gray-300 sm:text-xl lg:text-lg xl:text-xl">
+                        Anim aute id magna aliqua ad ad non deserunt sunt. Qui
+                        irure qui Lorem cupidatat commodo. Elit sunt amet fugiat
+                        veniam occaecat fugiat.
+                      </p>
+                      <div className="mt-10 sm:mt-12">
+                        <form
+                          action="#"
+                          className="sm:max-w-xl sm:mx-auto lg:mx-0"
+                        >
+                          <div className="sm:flex">
+                            <div className="min-w-0 flex-1">
+                              <label htmlFor="email" className="sr-only">
+                                Email address
+                              </label>
+                              <input
+                                id="email"
+                                type="email"
+                                placeholder="Enter your email"
+                                className="block w-full px-4 py-3 rounded-md border-0 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900"
+                              />
+                            </div>
+                            <div className="mt-3 sm:mt-0 sm:ml-3">
+                              <button
+                                type="submit"
+                                className="block w-full py-3 px-4 rounded-md shadow bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-medium hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900"
+                              >
+                                Start free trial
+                              </button>
+                            </div>
+                          </div>
+                          <p className="mt-3 text-sm text-gray-300 sm:mt-4">
+                            Start your free 14-day trial, no credit card
+                            necessary. By providing your email, you agree to our{" "}
+                            <a href="#" className="font-medium text-white">
+                              terms or service
+                            </a>
+                            .
+                          </p>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-12 -mb-16 sm:-mb-48 lg:m-0 lg:relative">
+                    <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
+                      {/* Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ */}
+                      <img
+                        className="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
+                        src="https://tailwindui.com/img/component-images/cloud-illustration-teal-cyan.svg"
+                        alt=""
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Feature section with grid */}
-          <div className="relative bg-white py-16 sm:py-24 lg:py-32">
-            <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
-              <h2 className="text-base font-semibold tracking-wider text-cyan-600 uppercase">Deploy faster</h2>
-              <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
-                Everything you need to deploy your app
-              </p>
-              <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500">
-                Phasellus lorem quam molestie id quisque diam aenean nulla in. Accumsan in quis quis nunc, ullamcorper
-                malesuada. Eleifend condimentum id viverra nulla.
-              </p>
-              <div className="mt-12">
-                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                  {features.map((feature) => (
-                    <div key={feature.name} className="pt-6">
-                      <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8">
-                        <div className="-mt-6">
-                          <div>
-                            <span className="inline-flex items-center justify-center p-3 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-md shadow-lg">
-                              <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
-                            </span>
+            {/* Feature section with grid */}
+            <div className="relative bg-white py-16 sm:py-24 lg:py-32">
+              <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
+                <h2 className="text-base font-semibold tracking-wider text-cyan-600 uppercase">
+                  Deploy faster
+                </h2>
+                <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
+                  Everything you need to deploy your app
+                </p>
+                <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500">
+                  Phasellus lorem quam molestie id quisque diam aenean nulla in.
+                  Accumsan in quis quis nunc, ullamcorper malesuada. Eleifend
+                  condimentum id viverra nulla.
+                </p>
+                <div className="mt-12">
+                  <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    {features.map((feature) => (
+                      <div key={feature.name} className="pt-6">
+                        <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                          <div className="-mt-6">
+                            <div>
+                              <span className="inline-flex items-center justify-center p-3 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-md shadow-lg">
+                                <feature.icon
+                                  className="h-6 w-6 text-white"
+                                  aria-hidden="true"
+                                />
+                              </span>
+                            </div>
+                            <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">
+                              {feature.name}
+                            </h3>
+                            <p className="mt-5 text-base text-gray-500">
+                              {feature.description}
+                            </p>
                           </div>
-                          <h3 className="mt-8 text-lg font-medium text-gray-900 tracking-tight">{feature.name}</h3>
-                          <p className="mt-5 text-base text-gray-500">{feature.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Blog section */}
+            <div className="relative bg-gray-50 py-16 sm:py-24 lg:py-32">
+              <div className="relative">
+                <div className="text-center mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
+                  <h2 className="text-base font-semibold tracking-wider text-cyan-600 uppercase">
+                    Learn
+                  </h2>
+                  <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
+                    Helpful Resources
+                  </p>
+                  <p className="mt-5 mx-auto max-w-prose text-xl text-gray-500">
+                    Phasellus lorem quam molestie id quisque diam aenean nulla
+                    in. Accumsan in quis quis nunc, ullamcorper malesuada.
+                    Eleifend condimentum id viverra nulla.
+                  </p>
+                </div>
+                <div className="mt-12 mx-auto max-w-md px-4 grid gap-8 sm:max-w-lg sm:px-6 lg:px-8 lg:grid-cols-3 lg:max-w-7xl">
+                  {blogPosts.map((post) => (
+                    <div
+                      key={post.id}
+                      className="flex flex-col rounded-lg shadow-lg overflow-hidden"
+                    >
+                      <div className="flex-shrink-0">
+                        <img
+                          className="h-48 w-full object-cover"
+                          src={post.imageUrl}
+                          alt=""
+                        />
+                      </div>
+                      <div className="flex-1 bg-white p-6 flex flex-col justify-between">
+                        <div className="flex-1">
+                          <p className="text-sm font-medium text-cyan-600">
+                            <a
+                              href={post.category.href}
+                              className="hover:underline"
+                            >
+                              {post.category.name}
+                            </a>
+                          </p>
+                          <a href={post.href} className="block mt-2">
+                            <p className="text-xl font-semibold text-gray-900">
+                              {post.title}
+                            </p>
+                            <p className="mt-3 text-base text-gray-500">
+                              {post.preview}
+                            </p>
+                          </a>
+                        </div>
+                        <div className="mt-6 flex items-center">
+                          <div className="flex-shrink-0">
+                            <a href={post.author.href}>
+                              <img
+                                className="h-10 w-10 rounded-full"
+                                src={post.author.imageUrl}
+                                alt={post.author.name}
+                              />
+                            </a>
+                          </div>
+                          <div className="ml-3">
+                            <p className="text-sm font-medium text-gray-900">
+                              <a
+                                href={post.author.href}
+                                className="hover:underline"
+                              >
+                                {post.author.name}
+                              </a>
+                            </p>
+                            <div className="flex space-x-1 text-sm text-gray-500">
+                              <time dateTime={post.datetime}>{post.date}</time>
+                              <span aria-hidden="true">&middot;</span>
+                              <span>{post.readingLength} read</span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -427,74 +541,22 @@ export default function App() {
                 </div>
               </div>
             </div>
-          </div>
+          </main>
 
-          {/* Blog section */}
-          <div className="relative bg-gray-50 py-16 sm:py-24 lg:py-32">
-            <div className="relative">
-              <div className="text-center mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
-                <h2 className="text-base font-semibold tracking-wider text-cyan-600 uppercase">Learn</h2>
-                <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
-                  Helpful Resources
-                </p>
-                <p className="mt-5 mx-auto max-w-prose text-xl text-gray-500">
-                  Phasellus lorem quam molestie id quisque diam aenean nulla in. Accumsan in quis quis nunc, ullamcorper
-                  malesuada. Eleifend condimentum id viverra nulla.
+          <footer className="bg-gray-50" aria-labelledby="footer-heading">
+            <div className="max-w-md mx-auto pt-12 px-4 sm:max-w-7xl sm:px-6 lg:pt-16 lg:px-8">
+              <div className="mt-12 border-t border-gray-200 py-8">
+                <p className="text-base text-gray-400 xl:text-center">
+                  &copy; 2020 Workflow, Inc. All rights reserved.
                 </p>
               </div>
-              <div className="mt-12 mx-auto max-w-md px-4 grid gap-8 sm:max-w-lg sm:px-6 lg:px-8 lg:grid-cols-3 lg:max-w-7xl">
-                {blogPosts.map((post) => (
-                  <div key={post.id} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
-                    <div className="flex-shrink-0">
-                      <img className="h-48 w-full object-cover" src={post.imageUrl} alt="" />
-                    </div>
-                    <div className="flex-1 bg-white p-6 flex flex-col justify-between">
-                      <div className="flex-1">
-                        <p className="text-sm font-medium text-cyan-600">
-                          <a href={post.category.href} className="hover:underline">
-                            {post.category.name}
-                          </a>
-                        </p>
-                        <a href={post.href} className="block mt-2">
-                          <p className="text-xl font-semibold text-gray-900">{post.title}</p>
-                          <p className="mt-3 text-base text-gray-500">{post.preview}</p>
-                        </a>
-                      </div>
-                      <div className="mt-6 flex items-center">
-                        <div className="flex-shrink-0">
-                          <a href={post.author.href}>
-                            <img className="h-10 w-10 rounded-full" src={post.author.imageUrl} alt={post.author.name} />
-                          </a>
-                        </div>
-                        <div className="ml-3">
-                          <p className="text-sm font-medium text-gray-900">
-                            <a href={post.author.href} className="hover:underline">
-                              {post.author.name}
-                            </a>
-                          </p>
-                          <div className="flex space-x-1 text-sm text-gray-500">
-                            <time dateTime={post.datetime}>{post.date}</time>
-                            <span aria-hidden="true">&middot;</span>
-                            <span>{post.readingLength} read</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
-          </div>
-        </main>
-
-        <footer className="bg-gray-50" aria-labelledby="footer-heading">
-          <div className="max-w-md mx-auto pt-12 px-4 sm:max-w-7xl sm:px-6 lg:pt-16 lg:px-8">
-          <div className="mt-12 border-t border-gray-200 py-8">
-              <p className="text-base text-gray-400 xl:text-center">&copy; 2020 Workflow, Inc. All rights reserved.</p>
-            </div>
-          </div>
-        </footer>
+          </footer>
+        </div>
+        <Switch>
+          <Route exact path="/"></Route>
+        </Switch>
       </div>
-    </div>
-  )
+    </BrowserRouter>
+  );
 }
