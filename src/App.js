@@ -1,23 +1,24 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./components/Home";
-import Listing from './components/Listing'
+import { Switch, Route } from "react-router-dom";
 
-// import './Style/App.css';
+// COMPONENTS
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import LandingPage from "./pages/LandingPage";
+import LostPet from "./pages/LostPet";
+import FoundPet from "./pages/FoundPet";
+import Results from "./pages/Results"
 
-function App() {
-  return(
+export default function App() {
+  return (
     <div>
-      <Router>
-        <Switch>
-          <Route exact path = "/" render={Home}/>
-          {/* <Route exact path = "/form" render={(props) => <Form {...props}/>}/> */}
-          <Route exact path = "/listing" render={(props) => <Listing {...props}/>}/>
-          {/* <Route exact path = "/listing" render={<Listing />}/> */}
-        </Switch>
-      </Router>
+      <Header />
+      <Switch>
+        <Route path="/lost-pet" component={LostPet}></Route>
+        <Route path="/found-pet" component={FoundPet}></Route>
+        <Route exact path="/" component={LandingPage}></Route>
+        <Route exact path="/results" component={Results}></Route>
+      </Switch>
+      <Footer />
     </div>
   )
 }
-
-export default App
