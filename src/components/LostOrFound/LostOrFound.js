@@ -13,7 +13,7 @@ export default function LostOrFound() {
 //     </Container>
 <div class="container">
   <button class="card">
-    <div class="box">
+    <div class="boxes">
       <div class="content">
         <h2>Lost</h2>
         <h3>I Lost My Pet</h3>
@@ -23,7 +23,7 @@ export default function LostOrFound() {
   </button>
 
   <div class="card">
-    <div class="box">
+    <div class="boxes">
       <div class="content">
         <h2>Found</h2>
         <h3>I Found a Pet</h3>
