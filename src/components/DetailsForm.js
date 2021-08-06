@@ -1,3 +1,5 @@
+import { useHistory } from "react-router-dom";
+
 /*
   This example requires Tailwind CSS v2.0+ 
   
@@ -15,8 +17,14 @@
   ```
 */
 export default function DetailsForm({ heading }) {
+  let history = useHistory();
   return (
-    <form className="space-y-8 divide-y divide-gray-200">
+    <form 
+      onSubmit={(e) => {
+        e.preventDefault();
+        history.push('/results');
+      }}
+      className="space-y-8 divide-y divide-gray-200">
       <div className="space-y-8 divide-y divide-gray-200">
         <div>
           <div>
@@ -272,6 +280,11 @@ export default function DetailsForm({ heading }) {
           <button
             type="submit"
             className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+
+            // onclick={(e) => {
+              // e.preventDefault();
+              // history.push('/results')
+            // }}
           >
             Submit
           </button>
