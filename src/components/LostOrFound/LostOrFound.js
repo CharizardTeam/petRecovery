@@ -10,7 +10,7 @@ export default function LostOrFound() {
     // <Cardbox/>
     // <Cardbox/>
     //     </Container>
-    <div class="container">
+    <div class="container flex justify-center">
       <Link to={"/lost-pet"}>
         <div class="card">
           <div class="boxes">

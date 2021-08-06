@@ -16,12 +16,13 @@ body {
 }
 
 body .container {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   max-width: 1200px;
-  margin: 40px 0;
+  margin: 40px 0; */
+  margin: 0 auto;
 }
 
 body .container .card {

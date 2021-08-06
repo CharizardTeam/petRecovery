@@ -6,11 +6,11 @@ import Footer from "./components/Footer";
 import LandingPage from "./pages/LandingPage";
 import LostPet from "./pages/LostPet";
 import FoundPet from "./pages/FoundPet";
-import Results from "./pages/Results"
+import Results from "./pages/Results";
 
 export default function App() {
   return (
-    <div>
+    <div className="app">
       <Header />
       <Switch>
         <Route path="/lost-pet" component={LostPet}></Route>
