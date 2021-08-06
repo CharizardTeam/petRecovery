@@ -64,6 +64,10 @@ const files = [
 
 export default function Results() {
   return (
+      <nav
+      className="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6"
+      aria-label="Global"
+    >
     <ul
       role="list"
       className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8"
@@ -100,6 +104,6 @@ export default function Results() {
         </li>
       ))}
     </ul>
-    // </div>
+    </nav>
   );
 }
