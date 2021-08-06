@@ -16,9 +16,8 @@ import { useHistory } from "react-router-dom";
   }
   ```
 */
-export default function DetailsForm() {
+export default function DetailsForm({ heading }) {
   let history = useHistory();
-  
   return (
     <form 
       onSubmit={(e) => {
@@ -29,12 +28,7 @@ export default function DetailsForm() {
       <div className="space-y-8 divide-y divide-gray-200">
         <div>
           <div>
-            {/* <h3 className="text-lg leading-6 font-medium text-gray-900">
-              Profile
-            </h3> */}
-            <p className="mt-1 text-sm text-gray-500 text-center">
-              Some tagline.
-            </p>
+            <h1 className="text-3xl text-center">{heading}</h1>
           </div>
         </div>
 
