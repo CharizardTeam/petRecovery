@@ -19,12 +19,13 @@ import { useHistory } from "react-router-dom";
 export default function DetailsForm({ heading }) {
   let history = useHistory();
   return (
-    <form 
+    <form
       onSubmit={(e) => {
         e.preventDefault();
-        history.push('/results');
+        history.push("/results");
       }}
-      className="space-y-8 divide-y divide-gray-200">
+      className="detailsForm space-y-8 divide-y divide-gray-200"
+    >
       <div className="space-y-8 divide-y divide-gray-200">
         <div>
           <div>
@@ -282,8 +283,8 @@ export default function DetailsForm({ heading }) {
             className="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
 
             // onclick={(e) => {
-              // e.preventDefault();
-              // history.push('/results')
+            // e.preventDefault();
+            // history.push('/results')
             // }}
           >
             Submit

@@ -5,3 +5,10 @@
 .app {
   width: 100vw;
 }
+
+.detailsForm {
+  padding: 15px;
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+}
