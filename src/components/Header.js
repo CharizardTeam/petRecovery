@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { Link } from "react-router-dom";
+import logo from '../../images/paw.png'
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -59,7 +60,7 @@ export default function Header() {
                   href="#"
                   className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700"
                 >
-                  Start free trial
+                  Sign Up
                 </a>
               </div>
             </nav>
