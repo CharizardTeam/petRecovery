@@ -24,6 +24,10 @@
   color: white;
 }
 
+.backgroundImage {
+  background-image: url("src/images/petrecovery.jpg");
+}
+
 .App-link {
   color: #61dafb;
 }

@@ -2,10 +2,10 @@ import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { Link } from "react-router-dom";
-import logo from '../../images/paw.png'
+import logo from '../images/paw.png'
 
 const navigation = [
-  { name: "Home", href: "/" },
+  { name: "Pet Recovery", href: "/" },
   { name: "Lost My Pet", href: "/lost-pet" },
   { name: "Found a Pet", href: "/found-pet" },
 ];
@@ -26,7 +26,7 @@ export default function Header() {
                     <span className="sr-only">Workflow</span>
                     <img
                       className="h-8 w-auto sm:h-10"
-                      src="https://tailwindui.com/img/logos/workflow-mark-teal-200-cyan-400.svg"
+                      src={logo}
                       alt=""
                     />
                   </a>
